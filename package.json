@@ -1,11 +1,33 @@
 {
   "name": "align-last-flex-row",
   "version": "0.3.0",
-  "description": "Simple function to align last wrapped flex row to the rest of the \"grid\"",
-  "main": "index.js",
+  "author": "Jorge Linares",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup index.ts --format cjs, esm --dts",
+    "lint": "tsc"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "description": "Simple function to align last wrapped flex row to the rest of the \"grid\"",
   "keywords": [
     "align",
     "flex",
@@ -13,11 +35,5 @@
     "last",
     "row",
     "fill"
-  ],
-  "author": "Jorge Linares",
-  "license": "MIT",
-  "devDependencies": {
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
-  }
+  ]
 }
