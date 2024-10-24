@@ -28,6 +28,10 @@
     "typescript": "^5.6.3"
   },
   "description": "Simple function to align last wrapped flex row to the rest of the \"grid\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urmoov-dev/align-last-flexbox-row.git"
+  },
   "keywords": [
     "align",
     "flex",
