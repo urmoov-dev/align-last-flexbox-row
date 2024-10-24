@@ -39,15 +39,15 @@ export function alignLastFlexLine(element:HTMLElement) {
         rowFiller.style.height = "0px"
     } else {
         rowFiller = element.lastElementChild as HTMLElement
-        rowFiller.style.width = "0px"
     }
+    rowFiller.style.width = "0px"
 
     const numberOfChildren = Array.from(element.children).length - alreadyHasFiller
     const flexRows = howManyFlexRows(element.children)
     const flexColumns = howManyFlexColumns(element.children)
     const flexCells = flexRows*flexColumns
     const remainder = flexCells - numberOfChildren 
-    if (remainder === 0) return
+    if (remainder === 0 || flexRows <= 1) return
     
     const columnWidth = (element.children[0] as HTMLElement).offsetWidth || 0
     const firstColumnStart = (element.children[0] as HTMLElement).offsetLeft
